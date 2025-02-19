@@ -1,0 +1,51 @@
+from lib.Limpeza import limpar_tela
+
+def escolhas():
+    limpar_tela()
+    while True:
+        print(
+        '''
+|-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-|
+|          -=- S.C.L.I.L.D -=-           |
+|-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-|-=-|
+| Cadastrar novos chamados . . . . . | 1 |
+| Buscar Chamados p/ Descrição/ID. . | 2 |
+| Listar Chamados  . . . . . . . . . | 3 |
+| Chamados Finalizados . . . . . . . | 4 |
+| Editar Chamados  . . . . . . . . . | 5 |
+|                                    |   |
+|-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-|-=-|
+| Sair . . . . . . . . . . . . . . . | X |
+|-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-|-=-|
+        ''' 
+        )
+
+        decisao = input("Digite sua opção: ")
+        if decisao == "1":
+            limpar_tela()
+
+        elif decisao == "2":
+            limpar_tela()
+
+        elif decisao == "3":
+            limpar_tela()
+
+        elif decisao == "4":
+            limpar_tela()
+
+        elif decisao == "5":
+            limpar_tela()
+
+        elif decisao == "x" or decisao == "X":
+            limpar_tela()
+            print()
+            print("Até Mais! ;D ")
+            print()
+            break
+
+        else:
+            limpar_tela()
+            print("Erro na Opção Selecionada, Tente Novamente... ")
+            continue
+
+escolhas()
