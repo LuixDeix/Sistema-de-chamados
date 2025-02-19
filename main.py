@@ -1,30 +1,34 @@
-from lib.Limpeza import limpar_tela
+from lib.Chamados_Busca import *
+from lib.Chamados_Cadastro import *
+from lib.Limpar import *
 
+limpar_tela()
 def escolhas():
-    limpar_tela()
     while True:
         print(
         '''
-|-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-|
+.________________________________________.
+|                                        |
 |          -=- S.C.L.I.L.D -=-           |
-|-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-|-=-|
+|====================================|===|
 | Cadastrar novos chamados . . . . . | 1 |
 | Buscar Chamados p/ Descrição/ID. . | 2 |
 | Listar Chamados  . . . . . . . . . | 3 |
 | Chamados Finalizados . . . . . . . | 4 |
 | Editar Chamados  . . . . . . . . . | 5 |
 |                                    |   |
-|-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-|-=-|
+|====================================|===|
 | Sair . . . . . . . . . . . . . . . | X |
-|-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-|-=-|
+|____________________________________|___|
         ''' 
         )
 
         decisao = input("Digite sua opção: ")
         if decisao == "1":
-            limpar_tela()
+            cadastrar_chamados()
 
         elif decisao == "2":
+            decisao_de_busca()
             limpar_tela()
 
         elif decisao == "3":

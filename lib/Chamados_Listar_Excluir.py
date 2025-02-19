@@ -1,4 +1,4 @@
-from Limpeza import limpar_tela
+from lib.Limpar import limpar_tela
 
 def remover_chamados():
     pass
