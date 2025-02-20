@@ -27,3 +27,16 @@ def salvar_chamados(novo_chamado):
 
     with open(DATAPATH, "w", encoding="utf-8") as file:
         json.dump(dados, file, indent=4, ensure_ascii=False)
+
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+def print_prioridades():
+    print("""
+.___________________________________.
+|                                   |
+|            Prioridade             |
+|===============================|===|
+| Sem Pressa . . . . . . . . . .| 1 |
+| Atenção Necessária . . . . . .| 2 |
+| URGENTE  . . . . . . . . . . .| 3 |
+|_______________________________|___|""")

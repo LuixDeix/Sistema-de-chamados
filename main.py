@@ -1,5 +1,7 @@
 from lib.Chamados_Busca import *
 from lib.Chamados_Cadastro import *
+from lib.Chamados_Listar_Excluir import *
+from lib.Chamados_Busca import *
 from lib.Limpar import *
 
 limpar_tela()
@@ -29,10 +31,9 @@ def escolhas():
 
         elif decisao == "2":
             decisao_de_busca()
-            limpar_tela()
 
         elif decisao == "3":
-            limpar_tela()
+            listar_chamados()   
 
         elif decisao == "4":
             limpar_tela()

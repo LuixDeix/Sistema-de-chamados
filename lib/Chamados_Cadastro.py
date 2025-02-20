@@ -18,6 +18,10 @@ def cadastrar_chamados():
 |                                               |                        |                    |
 |                                               |                        |                    |
 |===============================================|========================|====================|
+| TÍTULO DO CHAMADO:                            |       NÍVEL DE PRIORIDADE:                  |
+|                                               |                                             |
+|                                               |                                             |
+|===============================================|=============================================|
 | DESCRIÇÃO DO CHAMADO:                                                                       |
 |                                                                                             |
 |                                                                                             |
@@ -44,7 +48,7 @@ def cadastrar_chamados():
         else:
             break
     limpar_tela()
-#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- TELEFONE
 
     limpar_tela()
     while True:
@@ -57,6 +61,10 @@ def cadastrar_chamados():
 |                                               |                        |                    |""")
         print(f"| {str(nome):<45} |                        |                    |")
         print("""|===============================================|========================|====================|
+| TÍTULO DO CHAMADO:                            |       NÍVEL DE PRIORIDADE:                  |
+|                                               |                                             |
+|                                               |                                             |
+|===============================================|=============================================|
 | DESCRIÇÃO DO CHAMADO:                                                                       |
 |                                                                                             |
 |                                                                                             |
@@ -67,7 +75,7 @@ def cadastrar_chamados():
         if telefone == "":
             limpar_tela()
             continue
-        elif nome == "x" or nome == "X":
+        elif telefone == "x" or telefone == "X":
             certeza = input("Precione 'X' Novamente para SAIR: ")
             if certeza == "x" or certeza == "X":
                 limpar_tela()
@@ -83,7 +91,7 @@ def cadastrar_chamados():
             break
     limpar_tela()
 
-#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- LOCAL
 
 
     while True:
@@ -97,6 +105,10 @@ def cadastrar_chamados():
 |                                               |                        |                    |""")
         print(f"| {str(nome):<45} | {str(telefone):<22} |                    |")
         print("""|===============================================|========================|====================|
+| TÍTULO DO CHAMADO:                            |       NÍVEL DE PRIORIDADE:                  |
+|                                               |                                             |
+|                                               |                                             |
+|===============================================|=============================================|
 | DESCRIÇÃO DO CHAMADO:                                                                       |
 |                                                                                             |
 |                                                                                             |
@@ -107,7 +119,7 @@ def cadastrar_chamados():
         if local == "":
             limpar_tela()
             continue
-        elif nome == "x" or nome == "X":
+        elif local == "x" or local == "X":
             certeza = input("Precione 'X' Novamente para SAIR: ")
             if certeza == "x" or certeza == "X":
                 limpar_tela()
@@ -123,7 +135,7 @@ def cadastrar_chamados():
             break
     limpar_tela()
 
-#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- TITULO
 
     limpar_tela()
     while True:
@@ -135,7 +147,105 @@ def cadastrar_chamados():
 | NOME:                                         |       TELEFONE:        |      LOCAL:        |
 |                                               |                        |                    |""")
         print(f"| {str(nome):<45} | {str(telefone):<22} | {str(local):<18} |")
-        print("""|===============================================|========================|====================|
+        print(f"""|===============================================|========================|====================|
+| TÍTULO DO CHAMADO:                            |       NÍVEL DE PRIORIDADE:                  |
+|                                               |                                             |
+|                                               |                                             |
+|===============================================|=============================================|
+| DESCRIÇÃO DO CHAMADO:                                                                       |
+|                                                                                             |
+|                                                                                             |
+|=====================================================================================|=======|
+| CANCELAR OPERAÇÃO . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |   x   |
+|_____________________________________________________________________________________|_______|""")
+        titulo = input("\n Título do seu Chamado: ").title().strip() 
+        if titulo == "":
+            limpar_tela()
+            continue
+        elif titulo == "x" or titulo == "X":
+            certeza = input("Precione 'X' Novamente para SAIR: ")
+            if certeza == "x" or certeza == "X":
+                limpar_tela()
+                return
+            else:
+                limpar_tela()
+                continue
+        elif len(titulo) > 44:
+            limpar_tela()
+            print("Mensagem Muito Longa, favor escreva menos! ")
+            continue
+        else:
+            break
+    limpar_tela()
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- PRIORIDADE
+
+    limpar_tela()
+    while True:
+        print("""
+._____________________________________________________________________________________________.
+|                                                                                             |
+|                                 -=- NOVO CHAMADO -=-                                        |
+|=============================================================================================|
+| NOME:                                         |       TELEFONE:        |      LOCAL:        |
+|                                               |                        |                    |""")
+        print(f"| {str(nome):<45} | {str(telefone):<22} | {str(local):<18} |")
+        print(f"""|===============================================|========================|====================|
+| TÍTULO DO CHAMADO:                            |       NÍVEL DE PRIORIDADE:                  |
+|                                               |                                             |
+| {str(titulo):<45} |                                             |
+|===============================================|=============================================|
+| DESCRIÇÃO DO CHAMADO:                                                                       |
+|                                                                                             |
+|                                                                                             |
+|=====================================================================================|=======|
+| CANCELAR OPERAÇÃO . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . |   x   |
+|_____________________________________________________________________________________|_______|""")
+        print_prioridades()
+        prioridade_tipo = ""
+        prioridade = input("\n Selecione o Nível de Prioridade: ").title().strip() 
+        if prioridade == "":
+            limpar_tela()
+            continue
+        elif prioridade == "x" or prioridade == "X":
+            certeza = input("Precione 'X' Novamente para SAIR: ")
+            if certeza == "x" or certeza == "X":
+                limpar_tela()
+                return
+            else:
+                limpar_tela()
+                continue
+        elif prioridade == "1":
+            prioridade_tipo = "Sem Pressa"
+            break
+        elif prioridade == "2":
+            prioridade_tipo = "Atencao Necessaria"
+            break
+        elif prioridade == "3":
+            prioridade_tipo = "URGENCIA"
+            break
+        else:
+            limpar_tela()
+            print("Erro na Escolha, Tente novamente..")
+            continue
+    limpar_tela()
+
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- DETALHES
+
+    limpar_tela()
+    while True:
+        print("""
+._____________________________________________________________________________________________.
+|                                                                                             |
+|                                 -=- NOVO CHAMADO -=-                                        |
+|=============================================================================================|
+| NOME:                                         |       TELEFONE:        |      LOCAL:        |
+|                                               |                        |                    |""")
+        print(f"| {str(nome):<45} | {str(telefone):<22} | {str(local):<18} |")
+        print(f"""|===============================================|========================|====================|
+| TÍTULO DO CHAMADO:                            |       NÍVEL DE PRIORIDADE:                  |
+|                                               |                                             |
+| {str(titulo):<45} | {str(prioridade + " " + prioridade_tipo):<43} |
+|===============================================|=============================================|
 | DESCRIÇÃO DO CHAMADO:                                                                       |
 |                                                                                             |
 |                                                                                             |
@@ -146,7 +256,7 @@ def cadastrar_chamados():
         if descricao == "":
             limpar_tela()
             continue
-        elif nome == "x" or nome == "X":
+        elif descricao == "x" or descricao == "X":
             certeza = input("Precione 'X' Novamente para SAIR: ")
             if certeza == "x" or certeza == "X":
                 limpar_tela()
@@ -175,6 +285,10 @@ def cadastrar_chamados():
 |                                               |                        |                    |""")
         print(f"| {str(nome):<45} | {str(telefone):<22} | {str(local):<18} |")
         print(f"""|===============================================|========================|====================|
+| TÍTULO DO CHAMADO:                            |       NÍVEL DE PRIORIDADE:                  |
+|                                               |                                             |
+| {str(titulo):<45} | {str(prioridade + " " + prioridade_tipo):<43} |
+|===============================================|=============================================|
 | DESCRIÇÃO DO CHAMADO:                                                                       |
 |                                                                                             |
 | {str(descricao):<91} |
@@ -204,6 +318,9 @@ def cadastrar_chamados():
                 "Nome": nome,
                 "Telefone": telefone,
                 "Local" : local,
+                "Titulo" : titulo,
+                "Prioridade" : prioridade,
+                "Prioridade_texto" : prioridade_tipo,
                 "Descricao" : descricao,
                 "Data e Momento" : tempo,
                 "ID" : novo_id
@@ -213,7 +330,7 @@ def cadastrar_chamados():
             print(f"Chamado enviado com sucesso!")
             return
         elif salvar.lower() == 'n':
-            limpar_tela
+            limpar_tela()
             print("Operação Cancelada! ")
             break
         else:
