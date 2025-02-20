@@ -5,23 +5,45 @@ from lib.Chamados_Busca import *
 from lib.Limpar import *
 
 limpar_tela()
+
+def calcular_dados_gerais():
+    chamados = carregar_chamados()
+
+    if not chamados:
+        total_abertos = 0
+        total_fechados = 0
+    else:
+        total_abertos = len(chamados.get("chamados", []))
+        total_fechados = len(chamados.get("chamados_encerrados", []))
+
+    total_chamados = total_abertos + total_fechados
+    if total_chamados > 0:
+        porcentagem_abertos = (total_abertos / total_chamados) * 100
+        porcentagem_fechados = (total_fechados / total_chamados) * 100
+    else:
+        porcentagem_abertos = 0
+        porcentagem_fechados = 0
+
+    return total_abertos, total_fechados, round(porcentagem_abertos), round(porcentagem_fechados)
+
 def escolhas():
     while True:
+        total_abertos, total_fechados, porcentagem_abertos, porcentagem_fechados = calcular_dados_gerais()
         print(
-        '''
-.________________________________________.
-|                                        |
-|          -=- S.C.L.I.L.D -=-           |
-|====================================|===|
-| Cadastrar novos chamados . . . . . | 1 |
-| Buscar Chamados p/ Descrição/ID. . | 2 |
-| Listar Chamados  . . . . . . . . . | 3 |
-| Finalizar Chamado  . . . . . . . . | 4 |
-| Chamados Finalizados . . . . . . . | 5 |
-|                                    |   |
-|====================================|===|
-| Sair . . . . . . . . . . . . . . . | X |
-|____________________________________|___|
+        f'''
+.________________________________________.  .______________________________.
+|                                        |  |                              |
+|          -=- S.C.L.I.L.D -=-           |  |     -=-  DADOS GERAIS  -=-   |
+|====================================|===|  |======================|=======|
+| Cadastrar novos chamados . . . . . | 1 |  |                      |       |
+| Buscar Chamados p/ Descrição/ID. . | 2 |  | Chamados Abertos . . |  {total_abertos:<3}  |
+| Listar Chamados  . . . . . . . . . | 3 |  |    Porcentagem       |  {porcentagem_abertos}%  |
+| Finalizar Chamado  . . . . . . . . | 4 |  |______________________|_______|
+| Chamados Finalizados . . . . . . . | 5 |  |                      |       |
+|                                    |   |  | Chamados Fechados  . |  {total_fechados:<3}  |
+|====================================|===|  |    Porcentagem       |  {porcentagem_fechados}%  |
+| Sair . . . . . . . . . . . . . . . | X |  |______________________|_______|
+|____________________________________|___|  |______________________|_______|
         ''' 
         )
 
