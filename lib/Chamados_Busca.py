@@ -23,7 +23,7 @@ def decisao_de_busca():
             buscar_chamados_id()
 
         elif escolha == "2":
-            limpar_tela()
+            buscar_chamados_descricao()
 
         elif escolha == "x" or escolha == "X":
             limpar_tela()
@@ -105,5 +105,69 @@ def buscar_chamados_id():
 
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-def buscar_chamados_descrição():
-    pass
+def buscar_chamados_descricao():
+    limpar_tela()
+    chamados = carregar_chamados()
+
+    if not chamados or not chamados.get("chamados", []):
+        limpar_tela()
+        print("Adicione Novos Chamados Antes para usar essa Função!")
+        return
+
+    termo_busca = input("Digite uma palavra ou frase para buscar na descrição: ").strip().lower()
+
+    chamados_encontrados = [
+        chamado for chamado in chamados["chamados"]
+        if termo_busca in chamado["Descricao"].lower()
+    ]
+
+    limpar_tela()
+    if not chamados_encontrados:
+        print("Nenhum chamado encontrado com o termo informado.")
+        return
+
+    print(".________________________________________________________________.")
+    print("|                                                                |")
+    print("|           -=- CHAMADOS ENCONTRADOS -=-                         |")
+    print("|==============================|=====|===========================|")
+
+    for chamado in chamados_encontrados:
+        prioridade = chamado['Prioridade']
+        prioridade_texto = chamado['Prioridade_texto']
+
+        print(f"|  {chamado['Titulo']:<28}| {chamado['ID']:<3} | {prioridade} - {prioridade_texto:<21} |")
+
+    print("|==============================|=====|===========================|")
+    print("|                                    | VOLTAR . . . . . . .|  X  |")
+    print("|____________________________________|_____________________|_____|")
+
+    while True:
+        opcao = input("\nDigite o ID do chamado para ver detalhes ou 'X' para voltar: ").strip().upper()
+
+        if opcao == "X":
+            limpar_tela()
+            return
+        
+        chamado_selecionado = next((chamado for chamado in chamados_encontrados if chamado["ID"] == opcao), None)
+
+        if chamado_selecionado:
+            limpar_tela()
+            print(f"""
+._____________________________________________________________________________________________.
+|                                                                                             |
+|                                 -=- CHAMADO {chamado_selecionado["ID"]} -=-                 |
+|=============================================================================================|
+| NOME:                                         |       TELEFONE:        |      LOCAL:        |
+|                                               |                        |                    |""")
+            print(f"| {chamado_selecionado['Nome']:<45} | {chamado_selecionado['Telefone']:<22} | {chamado_selecionado['Local']:<18} |")
+            print(f"""|===============================================|========================|====================|
+| TÍTULO DO CHAMADO:                            |       NÍVEL DE PRIORIDADE:                  |
+|                                               |                                             |
+| {chamado_selecionado['Titulo']:<45} | {chamado_selecionado['Prioridade']} - {chamado_selecionado['Prioridade_texto']:<43} |
+|===============================================|=============================================|
+| DESCRIÇÃO DO CHAMADO:                                                                       |
+|                                                                                             |
+| {chamado_selecionado['Descricao']:<91} |
+|=====================================================================================|=======|""")
+        else:
+            print("ID não encontrado, tente novamente.")
