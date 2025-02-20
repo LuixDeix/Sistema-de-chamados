@@ -30,6 +30,16 @@ def salvar_chamados(novo_chamado):
 
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
+def salvar_chamados_removidos(chamados):
+    estrutura_corrigida = {
+        "chamados": chamados.get("chamados", []),  
+        "chamados_encerrados": chamados.get("chamados_encerrados", [])
+    }
+    with open(DATAPATH, "w", encoding="utf-8") as f:
+        json.dump(estrutura_corrigida, f, indent=4, ensure_ascii=False)
+
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
 def print_prioridades():
     print("""
 .___________________________________.

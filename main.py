@@ -16,8 +16,8 @@ def escolhas():
 | Cadastrar novos chamados . . . . . | 1 |
 | Buscar Chamados p/ Descrição/ID. . | 2 |
 | Listar Chamados  . . . . . . . . . | 3 |
-| Chamados Finalizados . . . . . . . | 4 |
-| Editar Chamados  . . . . . . . . . | 5 |
+| Finalizar Chamado  . . . . . . . . | 4 |
+| Chamados Finalizados . . . . . . . | 5 |
 |                                    |   |
 |====================================|===|
 | Sair . . . . . . . . . . . . . . . | X |
@@ -36,10 +36,10 @@ def escolhas():
             listar_chamados()   
 
         elif decisao == "4":
-            limpar_tela()
+            remover_chamados()
 
         elif decisao == "5":
-            limpar_tela()
+            listar_chamados_finalizados()
 
         elif decisao == "x" or decisao == "X":
             limpar_tela()

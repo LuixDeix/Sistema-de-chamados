@@ -67,17 +67,6 @@
             "ID": "008"
         },
         {
-            "Nome": "Ricardo Alves",
-            "Telefone": "994433221",
-            "Local": "Quarto",
-            "Titulo": "Janela Quebrada",
-            "Prioridade": "3",
-            "Prioridade_texto": "URGENTE",
-            "Descricao": "O vidro da janela quebrou após uma ventania forte.",
-            "Data e Momento": "19-02-2025 21:15",
-            "ID": "009"
-        },
-        {
             "Nome": "Tatiane Martins",
             "Telefone": "993322110",
             "Local": "Cozinha",
@@ -98,7 +87,9 @@
             "Descricao": "O estofado do sofá está rasgado e precisa de reparo.",
             "Data e Momento": "19-02-2025 21:45",
             "ID": "011"
-        },
+        }
+    ],
+    "chamados_encerrados": [
         {
             "Nome": "Paula Fernandes",
             "Telefone": "991100223",
@@ -109,6 +100,17 @@
             "Descricao": "O chuveiro não está esquentando a água corretamente.",
             "Data e Momento": "19-02-2025 22:00",
             "ID": "012"
+        },
+        {
+            "Nome": "Ricardo Alves",
+            "Telefone": "994433221",
+            "Local": "Quarto",
+            "Titulo": "Janela Quebrada",
+            "Prioridade": "3",
+            "Prioridade_texto": "URGENTE",
+            "Descricao": "O vidro da janela quebrou após uma ventania forte.",
+            "Data e Momento": "19-02-2025 21:15",
+            "ID": "009"
         }
     ]
 }

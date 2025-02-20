@@ -1,7 +1,6 @@
 from lib.Limpar import limpar_tela
 from lib.Chamados_Carregamento import *
 
-
 def decisao_de_busca():
     limpar_tela()
 
@@ -35,6 +34,8 @@ def decisao_de_busca():
             print("Erro na Opção Selecionada, Tente Novamente... ")
             continue
 
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
 def buscar_chamados_id():
     limpar_tela()
     chamados = carregar_chamados()
@@ -43,15 +44,21 @@ def buscar_chamados_id():
         print("Adicione Novos Chamados Antes para usar essa Função! ")
         return
     
-    print(".____________________________________.")
-    print("|                                    |")
-    print("|    -=- CHAMADOS EM ABERTO -=-      |")
-    print("|====================================|")
-    
-    for chamado in chamados["chamados"]:
-        print(f"|  {chamado['Titulo']:<28}| {chamado['ID']} |")
- 
-    print("|______________________________|_____|")
+    print(".________________________________________________________________.")
+    print("|                                                                |")
+    print("|           -=- CHAMADOS EM ABERTO -=-                           |")
+    print("|==============================|=====|===========================|")
+
+    for chamado in chamados:
+        prioridade = chamado['Prioridade']
+        prioridade_texto = chamado['Prioridade_texto']
+
+        print(f"|  {chamado['Titulo']:<28}| {chamado['ID']:<3} | {prioridade} - {prioridade_texto:<21} |")
+
+    print("|==============================|=====|=====================|=====|")
+    print("| INVERTER PRIORIDADES . . . . |  I  | VOLTAR . . . . . . .|  X  |")
+    print("|______________________________|_____|_____________________|_____|")
+
     print("")
     
     try:
@@ -95,6 +102,8 @@ def buscar_chamados_id():
 |                                                                                             |
 | {str(descricao):<91} |
 |=====================================================================================|=======|""")
+
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 def buscar_chamados_descrição():
     pass
