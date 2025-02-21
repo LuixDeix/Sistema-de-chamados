@@ -34,17 +34,6 @@
             "ID": "005"
         },
         {
-            "Nome": "Ana Clara",
-            "Telefone": "999112233",
-            "Local": "Banheiro",
-            "Titulo": "Vaso Entupido",
-            "Prioridade": "3",
-            "Prioridade_texto": "URGENTE",
-            "Descricao": "O vaso sanitário está entupido e não desce a água.",
-            "Data e Momento": "19-02-2025 20:30",
-            "ID": "006"
-        },
-        {
             "Nome": "Carlos Henrique",
             "Telefone": "995533221",
             "Local": "Escritório",
@@ -87,6 +76,17 @@
             "Descricao": "O estofado do sofá está rasgado e precisa de reparo.",
             "Data e Momento": "19-02-2025 21:45",
             "ID": "011"
+        },
+        {
+            "Nome": "Rafael",
+            "Telefone": "19997111919",
+            "Local": "Computador",
+            "Titulo": "Preciso Instalar O Dotnet",
+            "Prioridade": "3",
+            "Prioridade_texto": "URGENCIA",
+            "Descricao": "Meu Computador Não Está Com O Dotnet Instalado E Preciso Fazer Isso Urgente",
+            "Data e Momento": "20-02-2025 18:09",
+            "ID": "012"
         }
     ],
     "chamados_encerrados": [
@@ -122,6 +122,29 @@
             "Descricao": "Teste",
             "Data e Momento": "20-02-2025 00:06",
             "ID": "012"
-        }
+        },
+        {
+            "Nome": "Ana Clara",
+            "Telefone": "999112233",
+            "Local": "Banheiro",
+            "Titulo": "Vaso Entupido",
+            "Prioridade": "3",
+            "Prioridade_texto": "URGENTE",
+            "Descricao": "O vaso sanitário está entupido e não desce a água.",
+            "Data e Momento": "19-02-2025 20:30",
+            "ID": "006"
+        },
+        {
+            "Nome": "Jenifer Gomes",
+            "Telefone": "1199119911",
+            "Local": "Quarto",
+            "Titulo": "Guarda-Roupas Quebrado",
+            "Prioridade": "2",
+            "Prioridade_texto": "Atencao Necessaria",
+            "Descricao": "Quebrei Tudo",
+            "Data e Momento": "20-02-2025 20:52",
+            "ID": "013"
+        },
+        null
     ]
 }

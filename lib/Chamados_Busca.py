@@ -38,51 +38,61 @@ def decisao_de_busca():
 
 def buscar_chamados_id():
     limpar_tela()
-    chamados = carregar_chamados()
-    if not chamados:
-        limpar_tela()
-        print("Adicione Novos Chamados Antes para usar essa Função! ")
+    chamados = carregar_chamados() 
+
+    if not isinstance(chamados, dict):
+        print("Erro ao carregar meu parceiro...")
         return
-    
+
+    lista_chamados = chamados.get("chamados", [])
+
+    if not lista_chamados:
+        limpar_tela()
+        print("Adicione novos chamados antes de usar essa função!")
+        return
+
     print(".________________________________________________________________.")
     print("|                                                                |")
     print("|           -=- CHAMADOS EM ABERTO -=-                           |")
     print("|==============================|=====|===========================|")
 
-    for chamado in chamados:
-        prioridade = chamado['Prioridade']
-        prioridade_texto = chamado['Prioridade_texto']
+    for chamado in lista_chamados: 
+        if isinstance(chamado, dict): 
+            prioridade = chamado.get("Prioridade", "N/A")
+            prioridade_texto = chamado.get("Prioridade_texto", "N/A")
 
-        print(f"|  {chamado['Titulo']:<28}| {chamado['ID']:<3} | {prioridade} - {prioridade_texto:<21} |")
+            print(f"|  {chamado.get('Titulo', 'Sem Título'):<28}| {chamado.get('ID', 'N/A'):<3} | {prioridade} - {prioridade_texto:<21} |")
+        else:
+            print("Erro: chamado inválido no JSON.")
 
     print("|==============================|=====|=====================|=====|")
     print("| INVERTER PRIORIDADES . . . . |  I  | VOLTAR . . . . . . .|  X  |")
     print("|______________________________|_____|_____________________|_____|")
 
     print("")
-    
+
     try:
         opcao = input("Digite o ID do Chamado: ").strip()
-        
-        chamado_selecionado = next((chamado for chamado in chamados["chamados"] if chamado["ID"] == opcao), None)
-        
+        chamado_selecionado = next((ch for ch in lista_chamados if ch.get("ID") == opcao), None)
+
         if chamado_selecionado:
-            nome = chamado_selecionado["Nome"]
-            telefone = chamado_selecionado["Telefone"]
-            local = chamado_selecionado["Local"]
-            titulo = chamado_selecionado["Titulo"]
-            prioridade = chamado_selecionado["Prioridade"]
-            prioridade_texto = chamado_selecionado["Prioridade_texto"]
-            descricao = chamado_selecionado["Descricao"]
-            id = chamado_selecionado["ID"]
+            nome = chamado_selecionado.get("Nome", "N/A")
+            telefone = chamado_selecionado.get("Telefone", "N/A")
+            local = chamado_selecionado.get("Local", "N/A")
+            titulo = chamado_selecionado.get("Titulo", "N/A")
+            prioridade = chamado_selecionado.get("Prioridade", "N/A")
+            prioridade_texto = chamado_selecionado.get("Prioridade_texto", "N/A")
+            descricao = chamado_selecionado.get("Descricao", "N/A")
+            id = chamado_selecionado.get("ID", "N/A")
         else:
             limpar_tela()
             print("Chamado não encontrado com o ID informado.")
             return
-        
+
     except ValueError:
         print("Entrada inválida.")
         return
+
     limpar_tela()
 
     print(f"""
