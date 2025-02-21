@@ -95,19 +95,24 @@ def listar_chamados():
 def listar_chamados_finalizados():
     inverter_prioridade = False 
 
+    limpar_tela()
     while True:
-        limpar_tela()
         chamados = carregar_chamados()
 
-        if not chamados or not chamados.get("chamados_encerrados"):
-            limpar_tela()
-            print("Não há chamados finalizados para exibir.")
+        chamados_encerrados = chamados.get("chamados_encerrados", [])
+        if not isinstance(chamados_encerrados, list) or not chamados_encerrados:
+            print("Tem nada aqui meu parceiro.")
             return
 
+        chamados_validos = [
+            chamado for chamado in chamados_encerrados
+            if isinstance(chamado, dict) and "Prioridade" in chamado and chamado["Prioridade"] is not None
+        ]
+
         if inverter_prioridade:
-            chamados_ordenados = sorted(chamados["chamados_encerrados"], key=lambda x: int(x["Prioridade"]))
+            chamados_ordenados = sorted(chamados_validos, key=lambda x: int(x.get("Prioridade", 0)))
         else:
-            chamados_ordenados = sorted(chamados["chamados_encerrados"], key=lambda x: int(x["Prioridade"]), reverse=True)
+            chamados_ordenados = sorted(chamados_validos, key=lambda x: int(x.get("Prioridade", 0)), reverse=True)
 
         print(".________________________________________________________________.")
         print("|                                                                |")
@@ -115,7 +120,11 @@ def listar_chamados_finalizados():
         print("|==============================|=====|===========================|")
 
         for chamado in chamados_ordenados:
-            print(f"|  {chamado['Titulo']:<28}| {chamado['ID']:<3} | {chamado['Prioridade']} - {chamado['Prioridade_texto']:<21} |")
+            titulo = chamado.get("Titulo", "Sem Título")
+            chamado_id = chamado.get("ID", "N/A")
+            prioridade = chamado.get("Prioridade", "N/A")
+            prioridade_texto = chamado.get("Prioridade_texto", "N/A")
+            print(f"|  {titulo:<28}| {chamado_id:<3} | {prioridade} - {prioridade_texto:<21} |")
 
         print("|                              |     |                           |")
         print("|==============================|=====|=====================|=====|")
@@ -130,4 +139,5 @@ def listar_chamados_finalizados():
             limpar_tela()
             break
         else:
+            limpar_tela()
             print("Opção inválida! Tente novamente.")

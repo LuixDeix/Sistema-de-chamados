@@ -76,17 +76,6 @@
             "Descricao": "O estofado do sofá está rasgado e precisa de reparo.",
             "Data e Momento": "19-02-2025 21:45",
             "ID": "011"
-        },
-        {
-            "Nome": "Rafael",
-            "Telefone": "19997111919",
-            "Local": "Computador",
-            "Titulo": "Preciso Instalar O Dotnet",
-            "Prioridade": "3",
-            "Prioridade_texto": "URGENCIA",
-            "Descricao": "Meu Computador Não Está Com O Dotnet Instalado E Preciso Fazer Isso Urgente",
-            "Data e Momento": "20-02-2025 18:09",
-            "ID": "012"
         }
     ],
     "chamados_encerrados": [
@@ -145,6 +134,17 @@
             "Data e Momento": "20-02-2025 20:52",
             "ID": "013"
         },
-        null
+        null,
+        {
+            "Nome": "Rafael",
+            "Telefone": "19997111919",
+            "Local": "Computador",
+            "Titulo": "Preciso Instalar O Dotnet",
+            "Prioridade": "3",
+            "Prioridade_texto": "URGENCIA",
+            "Descricao": "Meu Computador Não Está Com O Dotnet Instalado E Preciso Fazer Isso Urgente",
+            "Data e Momento": "20-02-2025 18:09",
+            "ID": "012"
+        }
     ]
 }
