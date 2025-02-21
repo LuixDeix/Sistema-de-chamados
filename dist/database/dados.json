@@ -76,6 +76,17 @@
             "Descricao": "O estofado do sofá está rasgado e precisa de reparo.",
             "Data e Momento": "19-02-2025 21:45",
             "ID": "011"
+        },
+        {
+            "Nome": "Anderson Venturini",
+            "Telefone": "9",
+            "Local": "Quarto",
+            "Titulo": "Pastoral",
+            "Prioridade": "3",
+            "Prioridade_texto": "URGENCIA",
+            "Descricao": "Fui Treinar Polichinelo Em Cima Da Cama E Quebrei Ela, Quero Uma Nova",
+            "Data e Momento": "20-02-2025 22:16",
+            "ID": "012"
         }
     ],
     "chamados_encerrados": [

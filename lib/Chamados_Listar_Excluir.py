@@ -52,6 +52,14 @@ def remover_chamados():
 
 #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
+def deletar_tudo():
+    caminho_arquivo = "database/dados.json"  
+    with open(caminho_arquivo, "w") as arquivo:
+        arquivo.write("{}") 
+
+    print("Todos os chamados foram deletados! Mas a pergunta é, PORQUE????????? ")
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
 def listar_chamados():
     inverter_prioridade = False 
 
@@ -79,6 +87,9 @@ def listar_chamados():
         print("|==============================|=====|=====================|=====|")
         print("| INVERTER PRIORIDADES . . . . |  I  | VOLTAR . . . . . . .|  X  |")
         print("|______________________________|_____|_____________________|_____|")
+        print("|                                                          |     |")
+        print("| LIMPAR TUDO OQUE TEM NESSA LISTA PARA SEMPRE . . . . . . |  L  |")
+        print("|__________________________________________________________|_____|")
 
         opcao = input("\nEscolha uma opção: ").strip().upper()
 
@@ -87,6 +98,21 @@ def listar_chamados():
         elif opcao == "X":
             limpar_tela()
             break
+        elif opcao == "L":
+            certeza01 = input("Tem Certeza? (S/N)").upper()
+            if certeza01 == "S":
+                certeza02 = input("TEM CERTEZA? (S/N)").upper()
+                if certeza02 == "S":
+                    limpar_tela()
+                    deletar_tudo()
+                    print("Acabou")
+                    break
+                else:
+                    limpar_tela()
+                    continue
+            else:
+                limpar_tela()
+                continue
         else:
             print("Opção inválida! Tente novamente.")
 
