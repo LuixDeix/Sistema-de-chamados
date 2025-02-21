@@ -1,0 +1,150 @@
+{
+    "chamados": [
+        {
+            "Nome": "Luis Gabriel",
+            "Telefone": "991566861",
+            "Local": "Quarto",
+            "Titulo": "Cadeira Quebrada",
+            "Prioridade": "3",
+            "Prioridade_texto": "URGENTE",
+            "Descricao": "Quebrei a cadeira apenas por sentar nela",
+            "Data e Momento": "19-02-2025 19:44",
+            "ID": "003"
+        },
+        {
+            "Nome": "Maria Souza",
+            "Telefone": "998877665",
+            "Local": "Cozinha",
+            "Titulo": "Torneira Vazando",
+            "Prioridade": "2",
+            "Prioridade_texto": "ATENÇÃO NECESSÁRIA",
+            "Descricao": "A torneira está pingando sem parar, desperdiçando água.",
+            "Data e Momento": "19-02-2025 20:00",
+            "ID": "004"
+        },
+        {
+            "Nome": "João Pedro",
+            "Telefone": "996655443",
+            "Local": "Sala",
+            "Titulo": "Tomada Queimada",
+            "Prioridade": "1",
+            "Prioridade_texto": "SEM PRESSA",
+            "Descricao": "A tomada parou de funcionar após um curto-circuito.",
+            "Data e Momento": "19-02-2025 20:15",
+            "ID": "005"
+        },
+        {
+            "Nome": "Carlos Henrique",
+            "Telefone": "995533221",
+            "Local": "Escritório",
+            "Titulo": "Computador Travando",
+            "Prioridade": "1",
+            "Prioridade_texto": "SEM PRESSA",
+            "Descricao": "O computador está extremamente lento e travando.",
+            "Data e Momento": "19-02-2025 20:45",
+            "ID": "007"
+        },
+        {
+            "Nome": "Fernanda Lima",
+            "Telefone": "997755441",
+            "Local": "Garagem",
+            "Titulo": "Lâmpada Queimada",
+            "Prioridade": "2",
+            "Prioridade_texto": "ATENÇÃO NECESSÁRIA",
+            "Descricao": "A lâmpada da garagem queimou e está muito escuro.",
+            "Data e Momento": "19-02-2025 21:00",
+            "ID": "008"
+        },
+        {
+            "Nome": "Tatiane Martins",
+            "Telefone": "993322110",
+            "Local": "Cozinha",
+            "Titulo": "Micro-ondas não liga",
+            "Prioridade": "2",
+            "Prioridade_texto": "ATENÇÃO NECESSÁRIA",
+            "Descricao": "O micro-ondas parou de funcionar de repente.",
+            "Data e Momento": "19-02-2025 21:30",
+            "ID": "010"
+        },
+        {
+            "Nome": "Fábio Costa",
+            "Telefone": "992211334",
+            "Local": "Sala",
+            "Titulo": "Sofá Rasgado",
+            "Prioridade": "1",
+            "Prioridade_texto": "SEM PRESSA",
+            "Descricao": "O estofado do sofá está rasgado e precisa de reparo.",
+            "Data e Momento": "19-02-2025 21:45",
+            "ID": "011"
+        }
+    ],
+    "chamados_encerrados": [
+        {
+            "Nome": "Paula Fernandes",
+            "Telefone": "991100223",
+            "Local": "Banheiro",
+            "Titulo": "Chuveiro com problema",
+            "Prioridade": "3",
+            "Prioridade_texto": "URGENTE",
+            "Descricao": "O chuveiro não está esquentando a água corretamente.",
+            "Data e Momento": "19-02-2025 22:00",
+            "ID": "012"
+        },
+        {
+            "Nome": "Ricardo Alves",
+            "Telefone": "994433221",
+            "Local": "Quarto",
+            "Titulo": "Janela Quebrada",
+            "Prioridade": "3",
+            "Prioridade_texto": "URGENTE",
+            "Descricao": "O vidro da janela quebrou após uma ventania forte.",
+            "Data e Momento": "19-02-2025 21:15",
+            "ID": "009"
+        },
+        {
+            "Nome": "Teste",
+            "Telefone": "Teste",
+            "Local": "Teste",
+            "Titulo": "Teste",
+            "Prioridade": "3",
+            "Prioridade_texto": "URGENCIA",
+            "Descricao": "Teste",
+            "Data e Momento": "20-02-2025 00:06",
+            "ID": "012"
+        },
+        {
+            "Nome": "Ana Clara",
+            "Telefone": "999112233",
+            "Local": "Banheiro",
+            "Titulo": "Vaso Entupido",
+            "Prioridade": "3",
+            "Prioridade_texto": "URGENTE",
+            "Descricao": "O vaso sanitário está entupido e não desce a água.",
+            "Data e Momento": "19-02-2025 20:30",
+            "ID": "006"
+        },
+        {
+            "Nome": "Jenifer Gomes",
+            "Telefone": "1199119911",
+            "Local": "Quarto",
+            "Titulo": "Guarda-Roupas Quebrado",
+            "Prioridade": "2",
+            "Prioridade_texto": "Atencao Necessaria",
+            "Descricao": "Quebrei Tudo",
+            "Data e Momento": "20-02-2025 20:52",
+            "ID": "013"
+        },
+        null,
+        {
+            "Nome": "Rafael",
+            "Telefone": "19997111919",
+            "Local": "Computador",
+            "Titulo": "Preciso Instalar O Dotnet",
+            "Prioridade": "3",
+            "Prioridade_texto": "URGENCIA",
+            "Descricao": "Meu Computador Não Está Com O Dotnet Instalado E Preciso Fazer Isso Urgente",
+            "Data e Momento": "20-02-2025 18:09",
+            "ID": "012"
+        }
+    ]
+}
